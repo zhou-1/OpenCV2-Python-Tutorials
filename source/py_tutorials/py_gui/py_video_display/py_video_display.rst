@@ -125,6 +125,18 @@ Below code capture from a Camera, flip every frame in vertical direction and sav
     cv2.destroyAllWindows()
 
 
+
+#### ADD ON for MP4 file #######
+For MP4 file, XVID doesn't work. I tried H/X264(those 2 don't save videos), DIVX, XVID, WMV1, WMV2 and MJPG (rest save a video for me but shows error).
+They all shows error like:   
+OpenCV: FFMPEG: tag 0x31564d57/'xxxx(i.e. WMV1)' is not supported with codec id 17 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+I searched online, found two solutions?    
+1. use 'output.mp4v' instead of 'output.mp4'. Then it shows no error, but also no video show in folder  
+2. Based online research, someone said 'If you installed this package via pip install opencv-python then there's no encoding support for x264 because it's under GPL license. Upgrading FFmpeg won't help because opencv-python ships with its own FFmpeg.'
+https://github.com/skvark/opencv-python/issues/100
+They are all advice for mp4 format; if there is any better idea, please update on website, really appreciate!
+
+
 Additional Resources
 ==========================
 
